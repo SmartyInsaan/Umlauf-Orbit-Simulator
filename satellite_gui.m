@@ -15,23 +15,23 @@ hM=uicontrol(f,'Style','edit','Position',[150 620 100 25],'String','25');
 uicontrol(f,'Style','text','Position',[20 590 120 20],'String','Drag Coeff');
 hCd=uicontrol(f,'Style','edit','Position',[150 590 100 25],'String','2');
 
-uicontrol(f,'Style','text','Position',[20 540 120 20],'String','Pos X');
-hRx=uicontrol(f,'Style','edit','Position',[150 540 100 25],'String','-4817e3');
+uicontrol(f,'Style','text','Position',[20 540 120 20],'String','Semimajor Axis (m)');
+semimajor_0=uicontrol(f,'Style','edit','Position',[150 540 100 25],'String','7000e3');
 
-uicontrol(f,'Style','text','Position',[20 510 120 20],'String','Pos Y');
-hRy=uicontrol(f,'Style','edit','Position',[150 510 100 25],'String','4817e3');
+uicontrol(f,'Style','text','Position',[20 510 120 20],'String','Eccentricity');
+ecc_0=uicontrol(f,'Style','edit','Position',[150 510 100 25],'String','1e-3');
 
-uicontrol(f,'Style','text','Position',[20 480 120 20],'String','Pos Z');
-hRz=uicontrol(f,'Style','edit','Position',[150 480 100 25],'String','6812e3');
+uicontrol(f,'Style','text','Position',[20 480 120 20],'String','Inclination (deg)');
+inc_0=uicontrol(f,'Style','edit','Position',[150 480 100 25],'String','45');
 
-uicontrol(f,'Style','text','Position',[20 430 120 20],'String','Vel X');
-hVx=uicontrol(f,'Style','edit','Position',[150 430 100 25],'String','-4739');
+uicontrol(f,'Style','text','Position',[20 430 120 20],'String','RAAN (deg)');
+raan_0=uicontrol(f,'Style','edit','Position',[150 430 100 25],'String','45');
 
-uicontrol(f,'Style','text','Position',[20 400 120 20],'String','Vel Y');
-hVy=uicontrol(f,'Style','edit','Position',[150 400 100 25],'String','-4516');
+uicontrol(f,'Style','text','Position',[20 400 120 20],'String','Arg of Perigee (deg)');
+argper_0=uicontrol(f,'Style','edit','Position',[150 400 100 25],'String','45');
 
-uicontrol(f,'Style','text','Position',[20 370 120 20],'String','Vel Z');
-hVz=uicontrol(f,'Style','edit','Position',[150 370 100 25],'String','158');
+uicontrol(f,'Style','text','Position',[20 370 120 20],'String','True Anomaly (deg)');
+truean_0=uicontrol(f,'Style','edit','Position',[150 370 100 25],'String','45');
 
 uicontrol(f,'Style','text','Position',[20 320 120 20],'String','No. of Orbits');
 hOrbit=uicontrol(f,'Style','edit','Position',[150 320 100 25],'String','5');
@@ -65,16 +65,15 @@ m=str2double(get(hM,'String'));
 Cd=str2double(get(hCd,'String'));
 dt=str2double(get(hDt,'String'));
 nOrbit=str2double(get(hOrbit,'String'));
-
-r=[str2double(get(hRx,'String'));
-   str2double(get(hRy,'String'));
-   str2double(get(hRz,'String'))];
-
-v=[str2double(get(hVx,'String'));
-   str2double(get(hVy,'String'));
-   str2double(get(hVz,'String'))];
-
 mu=398600.11e9;
+semimajor_0=str2double(get(semimajor_0,'String'));
+ecc_0=str2double(get(ecc_0,'String'));
+inc_0=str2double(get(inc_0,'String'));
+raan_0=str2double(get(raan_0,'String'));
+argper_0=str2double(get(argper_0,'String'));
+truean_0=str2double(get(truean_0,'String'));
+%r=[str2double(get(hRx,'String'));
+[r,v]=elements_to_posi_vel(mu,semimajor_0,ecc_0,inc_0,raan_0,argper_0,truean_0);
 j2=1.08263e-3;
 r_eq=6378e3;
 
