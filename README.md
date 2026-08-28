@@ -534,12 +534,12 @@ Umlauf Orbit Simulator was developed as an independent orbital-mechanics, physic
 
 Copyright © 2026 Pratham Vohra
 
-Licensed under the **Academic Free License version 3.0 (AFL-3.0)**.
+Licensed under the **GNU General Public License v3.0**.
 
 See the `LICENSE` file included in this repository for the complete license terms.
 
 ```text
-SPDX-License-Identifier: AFL-3.0
+SPDX-License-Identifier: GNU GPL v3.0
 ```
 
 ---
