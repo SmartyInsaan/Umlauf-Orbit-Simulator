@@ -1,3 +1,7 @@
+%GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
+%"Umlauf Orbit Simulator" Copyright (C) 2026 PRATHAM VOHRA
+%Author: Pratham Vohra
+%Email: vohraofficial7@gmail.com
 function satellite_gui()
 clc
 clear
