@@ -144,15 +144,28 @@ This allows the satellite trajectory to be calculated step by step over the sele
 
 ## Installation
 
-### 1. Install GNU Octave
+Umlauf Orbit Simulator (UOS) requires **GNU Octave** to run.
 
-Download and install GNU Octave for your operating system.
+No additional Octave packages are required for the current version of UOS.
 
-### 2. Download UOS
+### Windows
 
-Download or clone this repository.
+#### 1. Install GNU Octave
 
-Keep the following files inside the same folder:
+1. Go to the official **GNU Octave Download** page.
+2. Under **Microsoft Windows**, download the recommended **Windows 64-bit installer**.
+3. Open the downloaded `.exe` file.
+4. Follow the installation wizard using the default settings.
+5. Launch **GNU Octave** after installation.
+
+#### 2. Download UOS
+
+1. On this GitHub repository, click the green **Code** button.
+2. Select **Download ZIP**.
+3. Extract the downloaded ZIP file.
+4. Keep all UOS files together in the extracted project folder.
+
+The folder should contain:
 
 ```text
 Umlauf-Orbit-Simulator/
@@ -164,25 +177,195 @@ Umlauf-Orbit-Simulator/
 └── LICENSE
 ```
 
-### 3. Open the Project Folder
+#### 3. Run UOS
 
-Launch GNU Octave.
+Open GNU Octave.
 
-Set the current working directory to the folder containing the UOS files.
+Using the **Current Directory** panel, navigate to the extracted `Umlauf-Orbit-Simulator` folder.
 
----
+Alternatively, change the directory using:
 
-## Usage
+```matlab
+cd 'path/to/Umlauf-Orbit-Simulator'
+```
 
-Run the following command in the GNU Octave command window:
+Then run:
 
 ```matlab
 satellite_gui
 ```
 
-The Umlauf Orbit Simulator graphical interface will open.
+The Umlauf Orbit Simulator graphical interface should open.
 
 ---
+
+### macOS
+
+#### 1. Install GNU Octave
+
+GNU Octave can be installed on macOS using a package manager such as **Homebrew**.
+
+If Homebrew is already installed, open **Terminal** and run:
+
+```bash
+brew install octave
+```
+
+Alternatively, follow the macOS installation instructions provided through the official GNU Octave website.
+
+After installation, start GNU Octave.
+
+#### 2. Download UOS
+
+1. Open this GitHub repository.
+2. Click **Code**.
+3. Select **Download ZIP**.
+4. Open the downloaded ZIP file to extract it.
+5. Keep all project files inside the same `Umlauf-Orbit-Simulator` folder.
+
+The folder should contain:
+
+```text
+Umlauf-Orbit-Simulator/
+│
+├── satellite_gui.m
+├── elements_to_posi_vel.m
+├── alt_density_pratham.csv
+├── README.md
+└── LICENSE
+```
+
+#### 3. Run UOS
+
+Open GNU Octave and set the current working directory to the downloaded UOS folder.
+
+You can also use:
+
+```matlab
+cd '/path/to/Umlauf-Orbit-Simulator'
+```
+
+Then run:
+
+```matlab
+satellite_gui
+```
+
+The UOS graphical interface should open.
+
+---
+
+### Linux
+
+GNU Octave is available through the package repositories of most major Linux distributions.
+
+#### Ubuntu / Debian
+
+Open a terminal and run:
+
+```bash
+sudo apt update
+sudo apt install octave
+```
+
+#### Fedora
+
+Run:
+
+```bash
+sudo dnf install octave
+```
+
+#### Arch Linux
+
+Run:
+
+```bash
+sudo pacman -S octave
+```
+
+For other Linux distributions, install GNU Octave using your distribution's package manager or follow the GNU/Linux instructions provided by the official GNU Octave project.
+
+#### Download UOS
+
+1. Open this GitHub repository.
+2. Click **Code**.
+3. Select **Download ZIP**.
+4. Extract the ZIP archive.
+
+Make sure the project files remain together:
+
+```text
+Umlauf-Orbit-Simulator/
+│
+├── satellite_gui.m
+├── elements_to_posi_vel.m
+├── alt_density_pratham.csv
+├── README.md
+└── LICENSE
+```
+
+#### Run UOS
+
+Start GNU Octave.
+
+Change the working directory to the UOS folder:
+
+```matlab
+cd '/path/to/Umlauf-Orbit-Simulator'
+```
+
+Then run:
+
+```matlab
+satellite_gui
+```
+
+The Umlauf Orbit Simulator graphical interface should open.
+
+---
+
+## Quick Start
+
+Regardless of operating system, UOS can be started once GNU Octave is installed by:
+
+1. Downloading and extracting this repository.
+2. Opening the project folder in GNU Octave.
+3. Making sure the following three runtime files are in the same directory:
+
+```text
+satellite_gui.m
+elements_to_posi_vel.m
+alt_density_pratham.csv
+```
+
+4. Running:
+
+```matlab
+satellite_gui
+```
+
+5. Entering the required satellite and orbital parameters.
+6. Enabling or disabling **Atmospheric Drag** and **J2** as required.
+7. Clicking **Run Simulation**.
+
+> **Important:** Do not move `alt_density_pratham.csv` or `elements_to_posi_vel.m` outside the project directory unless the corresponding paths in the source code are also changed.
+
+---
+
+## Usage
+
+Once UOS has been launched, the graphical interface provides all inputs required for the simulation.
+
+Run the simulator using:
+
+```matlab
+satellite_gui
+```
+
+The **Umlauf Orbit Simulator** graphical interface will open.
+
+For a first test, the default values already provided in the interface can be used. Click **Run Simulation** to propagate the orbit and generate the 3D trajectory, altitude graph, speed graph, and calculated orbital information.
 
 ## Input Parameters
 
